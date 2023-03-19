@@ -1,0 +1,119 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 100vh;
+  font-family: "VT323", monospace;
+  background: url(../public/images/backgroundImage.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.login {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  max-width: 900px;
+  height: 55vh;
+  border-radius: 15px;
+  border: 10px solid;
+  border-image: url(../public/images/stone.jpg) 80;
+  display: flex;
+  flex-direction: column;
+  color: wheat;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+.choice {
+  background: url(../public/images/wood2.jpg) center;
+  background-size: contain;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 0px 20px 8px inset rgba(0, 0, 0, 0.6);
+}
+
+.avatarPicker {
+  width: 40%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.namePicker {
+  text-align: center;
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+}
+
+select {
+  font-family: "VT323", monospace;
+  margin: 1vh;
+  padding: 10px;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+}
+
+.nameMaker button {
+  text-align: center;
+  position: relative;
+  margin-left: 0;
+  margin-top: 0;
+  width: 30%;
+  height: 40%;
+  padding: 1vh;
+  border-radius: 10px;
+  outline: none;
+  font-family: "VT323", monospace;
+  font-size: 18px;
+}
+
+.nameMaker button:hover {
+  cursor: pointer;
+}
+.nameMaker button:active {
+  border: 2px solid black;
+}
+
+#slider {
+  border: 5px solid wheat;
+}
+#slider {
+  cursor: pointer;
+}
+
+.rsis-container:active {
+  transform: scale(0.98);
+}
+
+.join {
+  border-top: 10px solid;
+  border-image: url(../public/images/stone.jpg) 80;
+  box-shadow: 0px 20px 15px inset rgba(0, 0, 0, 0.6),
+    0px -6px 3px inset rgba(0, 0, 0, 0.6);
+  height: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(58, 58, 58);
+}
+
+#joinButton {
+  font-family: "VT323", monospace;
+  padding: 10px 20px;
+  font-size: 30px;
+}
