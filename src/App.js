@@ -50,8 +50,8 @@ function App() {
       const room = drone.subscribe("observable-room");
 
       room.on("message", (message) => {
-        const { data, member, timestamp, id } = message;
-        chat.messages.push({ member, data, timestamp, id });
+        const { data, member, id } = message;
+        chat.messages.push({ member, data, id });
         setChat({ ...chat }, chat.messages);
       });
 
@@ -74,15 +74,24 @@ function App() {
   }
 
   const onSendMessage = (message) => {
-    drone.publish({
-      room: "observable-room",
-      message,
-    });
+    const input = document.getElementsByTagName("input")[0];
+    if (message) {
+      drone.publish({
+        room: "observable-room",
+        message,
+      });
+      input.style.border = "none";
+      input.style.borderBottom = "8px solid rgb(58, 58, 58)";
+    } else {
+      input.style.border = "3px solid red";
+    }
   };
 
   const handleLogin = (username, avatarIndex) => {
+    const errorMsg = document.getElementById("errorMessage");
+
     if (!chat.member.username || !chat.member.avatar) {
-      document.getElementById("errorMessage").innerText =
+      errorMsg.innerText =
         "Please choose a character and confirm your username to continue";
     }
     chat.member = {

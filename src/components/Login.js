@@ -28,12 +28,15 @@ function Login({ handleLogin }) {
   const [noun, setNoun] = useState("");
 
   const selectAvatar = (index) => {
-    document.getElementById("slider").style.border = "7px solid green";
+    const slider = document.getElementById("slider");
+    slider.style.border = "7px solid green";
     setAvatarIndex(index);
   };
 
   const onClickNav = () => {
-    document.getElementById("slider").style.border = "5px solid wheat";
+    const slider = document.getElementById("slider");
+    document.getElementById("slider");
+    slider.style.border = "5px solid wheat";
   };
 
   const getAdjective = (e) => {
@@ -48,9 +51,8 @@ function Login({ handleLogin }) {
 
   const getUsername = (e) => {
     e.target.style.display = "none";
+
     setUsername(adjective + noun);
-    document.getElementsByClassName("nameDisplayer")[0].style.textDecoration =
-      "underline";
 
     const select = document.getElementsByTagName("select");
 
@@ -92,30 +94,32 @@ function Login({ handleLogin }) {
           <div className="namePicker">
             <h3>Choose your username</h3>
             <div className="nameMaker">
-              <select
-                name="adjective"
-                onChange={(e) => getAdjective(e)}
-                size="1"
-                id="adjectives"
-              >
-                <option hidden={true}>Adjective</option>
-                <option disabled="disabled" defaultValue={true}>
-                  Adjective
-                </option>
-                <AdjectiveList />
-              </select>
-              <select
-                name="noun"
-                size="1"
-                id="nouns"
-                onChange={(e) => getNoun(e)}
-              >
-                <option hidden={true}>Noun</option>
-                <option disabled="disabled" defaultValue={true}>
-                  Noun
-                </option>
-                <NounList />
-              </select>
+              <div className="selections">
+                <select
+                  name="adjective"
+                  onChange={(e) => getAdjective(e)}
+                  size="1"
+                  id="adjectives"
+                >
+                  <option hidden={true}>Adjective</option>
+                  <option disabled="disabled" defaultValue={true}>
+                    Adjective
+                  </option>
+                  <AdjectiveList />
+                </select>
+                <select
+                  name="noun"
+                  size="1"
+                  id="nouns"
+                  onChange={(e) => getNoun(e)}
+                >
+                  <option hidden={true}>Noun</option>
+                  <option disabled="disabled" defaultValue={true}>
+                    Noun
+                  </option>
+                  <NounList />
+                </select>
+              </div>
               <div className="nameResult">
                 <button id="nameSubmit" type="button" onClick={getUsername}>
                   Confirm

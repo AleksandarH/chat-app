@@ -6,6 +6,7 @@ import Members from "./ChatComponents/Members";
 import "../chat.css";
 class Chat extends React.Component {
   render() {
+    const { messages, thisMember, allUsers, onSendMessage } = this.props;
     return (
       <div>
         <div className="App-header">
@@ -14,13 +15,10 @@ class Chat extends React.Component {
           </header>
         </div>
         <div className="container">
-          <Messages
-            messages={this.props.messages}
-            thisMember={this.props.thisMember}
-          />
-          <Members allUsers={this.props.allUsers} />
+          <Messages messages={messages} thisMember={thisMember} />
+          <Members allUsers={allUsers} />
         </div>
-        <Input onSendMessage={this.props.onSendMessage} />
+        <Input onSendMessage={onSendMessage} />
       </div>
     );
   }

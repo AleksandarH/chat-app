@@ -228,3 +228,34 @@ h4 {
 
   background-size: cover;
 }
+
+@media (max-width: 769px) {
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .memberList {
+    width: 50%;
+    overflow: auto;
+    height: 15vh;
+  }
+  .Messages-list {
+    width: 90%;
+    margin: 0;
+    margin-top: 20px;
+  }
+  .Message-content > .username {
+    font-size: 16px;
+  }
+  .Message-content > .text {
+    font-size: 20px;
+  }
+  .currentMember > .avatar img {
+    width: 80%;
+    height: 80%;
+  }
+
+  form button {
+    display: none;
+  }
+}

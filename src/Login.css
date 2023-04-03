@@ -119,3 +119,42 @@ select {
   padding: 10px 20px;
   font-size: 30px;
 }
+
+@media (max-width: 769px) {
+  .login {
+    width: 80%;
+    height: 80vh;
+  }
+  .choice {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .App-header {
+    display: none;
+  }
+  .selections {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .avatarPicker {
+    justify-content: center;
+  }
+  .namePicker {
+    width: 70%;
+  }
+  .selections {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h3 {
+    font-size: 2vh;
+  }
+  .login {
+    height: 90vh;
+    width: 90%;
+  }
+}

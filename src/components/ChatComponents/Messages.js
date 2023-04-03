@@ -12,9 +12,11 @@ class Messages extends React.Component {
   }
   renderMessage(message, key) {
     const { member, data } = message;
-    key = this.props.messages[key].id;
-    console.log(key);
-    const currentMember = this.props.thisMember.id;
+    const { messages, thisMember } = this.props;
+
+    key = messages[key].id;
+
+    const currentMember = thisMember.id;
     const messageFromMe = message.member.id === currentMember;
     const className = messageFromMe
       ? "Messages-message currentMember"
